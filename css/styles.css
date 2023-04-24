@@ -165,29 +165,40 @@ body {
 
 .hero {
   background-color: var(--main-tittle-color);
-  padding-top: 188px;
-  padding-bottom: 188px;
-  max-width: 1440px;
-  height: 600px;
+  padding: 112px 0px;
+  /* height: 600px; */
   margin: 0 auto;
-  background-image: var(--bg-gradient), url(../images/people-office.jpg);
+  background-image: var(--bg-gradient), url(../images/people-office-mob.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* outline: 2px solid red; */
+}
+
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .box {
+    background-image: var(--bg-gradient),
+      url(../images/people-office-mob-2x.jpg);
+  }
 }
 
 .hero-title {
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
+  text-transform: capitalize;
   text-align: center;
   letter-spacing: 0.02em;
   color: var(--color-white);
-  margin-bottom: 48px;
-  max-width: 496px;
+  max-width: 320px;
+  margin-bottom: 72px;
   margin-left: auto;
   margin-right: auto;
+  /* 
+  margin-bottom: 48px;
+   */
 }
 
 .hero-btn {
@@ -217,48 +228,33 @@ body {
 }
 .advantages-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px;
 }
 .advantages-item {
-  width: calc((100% - 72px) / 4);
-  /* outline: 2px solid red; */
 }
 
 .advantages-item .title-text {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  text-align: center;
+  text-transform: capitalize;
   margin-bottom: 8px;
 }
-.advantages-title-text {
-}
+
 .advantages-text {
+  font-weight: 500;
   color: var(--text-color);
 }
 
 .advantages-icon {
-  width: 264px;
-  height: 112px;
-  border-radius: 4px;
-  background-color: var(--color-cloud);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
+  display: none;
 }
 
 /* ------------Чим ми займаємось------------ */
-
 .about {
-  padding-bottom: 120px;
-}
-.about-title {
-  margin-bottom: 72px;
-}
-.about-list {
-  display: flex;
-  gap: 24px;
-}
-
-.about-item {
-  width: calc((100% - 48px) / 3);
+  display: none;
 }
 
 /* ------------Наша команда------------ */
@@ -337,23 +333,21 @@ body {
 
 /* -----------Клієнти-------------  */
 
-.castomers-title {
+.customers-title {
   margin-bottom: 72px;
 }
 
-.castomers-list {
+.customers-list {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px 16px;
 }
 
-.castomers-item {
-  width: 168px;
+.customers-item {
   height: 88px;
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
+  width: calc((100% - 16px) / 2);
 }
-.castomers-link {
+.customers-link {
   width: 100%;
   height: 100%;
   cursor: pointer;
@@ -361,19 +355,20 @@ body {
   align-items: center;
   justify-content: center;
   color: #afb1b8;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.castomers-icon {
+.customers-icon {
   fill: currentColor;
 }
-.castomers-link:hover,
-.castomers-link:focus {
+.customers-link:hover,
+.customers-link:focus {
   border: 1px solid var(--color-hover);
   color: var(--color-hover);
 }
-
 /* ------------Футер------------ */
 
 .footer {
@@ -821,7 +816,7 @@ body {
   background-color: var(--color-hover);
 }
 
-/* МЕДІА-ЗАПИТИ */
+/* -------------------МЕДІА-ЗАПИТИ----------------------- */
 
 @media screen and (min-width: 428px) {
   .container {
@@ -904,8 +899,39 @@ body {
   .header-address-link {
     color: var(--text-color);
   }
+  /* ------------Герой 768---------- */
+
+  .hero {
+    background-image: var(--bg-gradient), url(../images/people-office-tab.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .box {
+      background-image: var(--bg-gradient),
+        url(../images/people-office-tab-2x.jpg);
+    }
+  }
+
+  .hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+    margin-bottom: 36px;
+  }
 
   /* --------Переваги 768--------- */
+  .advantages-item {
+    width: calc((100% - 24px) / 2);
+  }
+  .advantages-list {
+    gap: 72px 24px;
+  }
+
+  .advantages-item .title-text {
+    text-align: left;
+  }
 
   /* -----Наша команда 768-------- */
 
@@ -916,6 +942,19 @@ body {
   .team-item {
     width: calc((100% - 24px) / 2);
     margin-bottom: 64px;
+  }
+
+  /* -----------Клієнти 768-------------  */
+  .customers > .container {
+    width: 582px;
+  }
+
+  .customers-list {
+    gap: 72px 24px;
+  }
+
+  .customers-item {
+    width: calc((100% - 48px) / 3);
   }
 }
 
@@ -941,8 +980,56 @@ body {
     gap: 40px;
   }
 
+  /* ---------------Герой 1158--------------- */
+
+  .hero {
+    background-image: var(--bg-gradient), url(../images/people-office.jpg);
+    max-width: 1440px;
+    padding: 188px 0;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .box {
+      background-image: var(--bg-gradient), url(../images/people-office-2x.jpg);
+    }
+  }
+
   /* --------Переваги 1158------------- */
 
+  .advantages-item {
+    width: calc((100% - 72px) / 4);
+  }
+
+  .advantages-icon {
+    width: 264px;
+    height: 112px;
+    border-radius: 4px;
+    background-color: var(--color-cloud);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  /* ------------Чим ми займаємось 1158------------ */
+  .about {
+    display: flex;
+    padding-bottom: 120px;
+  }
+  .about-title {
+    margin-bottom: 72px;
+  }
+  .about-list {
+    display: flex;
+    gap: 24px;
+  }
+
+  .about-item {
+    width: calc((100% - 48px) / 3);
+  }
   /* --------Наша команда 1158--------- */
 
   .team > .container {
@@ -951,5 +1038,20 @@ body {
 
   .team-item {
     width: calc((100% - 72px) / 4);
+  }
+
+  /* -----------Клієнти 1158-------------  */
+  .customers > .container {
+    width: 1158px;
+  }
+
+  .customers-list {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .customers-item {
+    width: calc((100% - 120px) / 6);
   }
 }
