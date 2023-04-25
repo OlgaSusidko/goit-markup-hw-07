@@ -166,7 +166,6 @@ body {
 .hero {
   background-color: var(--main-tittle-color);
   padding: 112px 0px;
-  /* height: 600px; */
   margin: 0 auto;
   background-image: var(--bg-gradient), url(../images/people-office-mob.jpg);
   background-repeat: no-repeat;
@@ -188,7 +187,6 @@ body {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
-  text-transform: capitalize;
   text-align: center;
   letter-spacing: 0.02em;
   color: var(--color-white);
@@ -196,9 +194,6 @@ body {
   margin-bottom: 72px;
   margin-left: auto;
   margin-right: auto;
-  /* 
-  margin-bottom: 48px;
-   */
 }
 
 .hero-btn {
@@ -373,8 +368,7 @@ body {
 
 .footer {
   background-color: var(--main-tittle-color);
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 96px 0;
 }
 
 .footer-logo-design {
@@ -382,37 +376,43 @@ body {
 }
 
 .footer-text {
-  max-width: 264px;
+  max-width: 268px;
   color: var(--color-cloud);
-  max-width: 264px;
+  margin-bottom: 72px;
 }
 
 .footer-logo {
   margin-bottom: 16px;
+  justify-content: center;
 }
 
 .footer-wrap-soc {
+  margin-left: auto;
   margin-right: auto;
+  margin-bottom: 72px;
 }
 
 .footer-soc-text {
   font-weight: 500;
   color: var(--color-white);
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .footer-container {
-  display: flex;
-  /* outline: 2px solid red; */
+  flex-wrap: wrap;
 }
 
 .footer-wrap-logo {
-  margin-right: 120px;
+  max-width: 268px;
+  margin: 0 auto;
 }
 
 .footer-soc-list {
   display: flex;
   gap: 16px;
+  justify-content: center;
+  margin-bottom: 72px;
 }
 
 .footer-soc-item {
@@ -445,15 +445,15 @@ body {
   font-weight: 500;
   color: var(--color-white);
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .footer-form {
-  display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .footer-form-input {
-  width: 264px;
+  width: 100%;
   height: 40px;
   padding-left: 16px;
   border-radius: 4px;
@@ -461,6 +461,7 @@ body {
   background-color: var(--main-tittle-color);
   color: var(--color-cloud);
   outline: transparent;
+  margin-bottom: 16px;
 }
 
 .footer-form-input::placeholder {
@@ -474,7 +475,14 @@ body {
   border-color: var(--primary-color);
 }
 
+.footer-btn-wrap {
+  width: 165px;
+  position: relative;
+  margin: 0 auto;
+}
+
 .footer-form-btn {
+  position: relative;
   margin: 0 auto;
   min-width: 165px;
   height: 40px;
@@ -495,10 +503,6 @@ body {
 .footer-form-btn:hover,
 .footer-form-btn:focus {
   background-color: var(--color-hover);
-}
-
-.footer-btn-wrap {
-  position: relative;
 }
 
 .footer-btn-icon {
@@ -919,6 +923,8 @@ body {
     font-size: 56px;
     line-height: 1.07;
     margin-bottom: 36px;
+    max-width: 496px;
+    margin-bottom: 36px;
   }
 
   /* --------Переваги 768--------- */
@@ -935,19 +941,12 @@ body {
 
   /* -----Наша команда 768-------- */
 
-  .team > .container {
-    width: 582px;
-  }
-
   .team-item {
     width: calc((100% - 24px) / 2);
     margin-bottom: 64px;
   }
 
   /* -----------Клієнти 768-------------  */
-  .customers > .container {
-    width: 582px;
-  }
 
   .customers-list {
     gap: 72px 24px;
@@ -955,6 +954,47 @@ body {
 
   .customers-item {
     width: calc((100% - 48px) / 3);
+  }
+
+  /* ------------Футер 768------------ */
+
+  .footer-container {
+    display: flex;
+  }
+
+  .footer-wrap-logo {
+    max-width: 264px;
+    margin-right: 24px;
+    margin-left: 0;
+  }
+
+  .footer-logo {
+    margin-bottom: 16px;
+    justify-content: left;
+  }
+
+  .footer-wrap-soc {
+    margin-bottom: 0px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .footer-soc-text {
+    text-align: left;
+  }
+
+  .footer-form {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-form-title {
+    text-align: left;
+  }
+
+  .footer-form-input {
+    min-width: 264px;
+    margin-bottom: 0px;
   }
 }
 
@@ -986,6 +1026,7 @@ body {
     background-image: var(--bg-gradient), url(../images/people-office.jpg);
     max-width: 1440px;
     padding: 188px 0;
+    height: 600px;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -995,6 +1036,10 @@ body {
     .box {
       background-image: var(--bg-gradient), url(../images/people-office-2x.jpg);
     }
+  }
+
+  .hero-title {
+    margin-bottom: 48px;
   }
 
   /* --------Переваги 1158------------- */
@@ -1012,6 +1057,16 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 8px;
+  }
+
+  .advantages-item .title-text {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .advantages-text {
+    font-weight: 400;
   }
 
   /* ------------Чим ми займаємось 1158------------ */
@@ -1053,5 +1108,41 @@ body {
 
   .customers-item {
     width: calc((100% - 120px) / 6);
+  }
+
+  /* ------------Футер------------ */
+
+  .footer > .container {
+    width: 1158px;
+  }
+
+  .footer {
+    padding: 100px 0;
+  }
+
+  .footer-text {
+    max-width: 264px;
+  }
+
+  .footer-wrap-soc {
+    margin-right: auto;
+  }
+
+  .footer-wrap-logo {
+    margin-right: 120px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1157px) {
+  .team > .container {
+    width: 582px;
+  }
+
+  .customers > .container {
+    width: 582px;
+  }
+
+  .footer > .container {
+    width: 582px;
   }
 }
