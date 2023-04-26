@@ -223,6 +223,10 @@ body {
   color: #2e2f42;
 }
 
+.menu-link-active {
+  color: var(--color-hover);
+}
+
 .menu-address {
   margin-bottom: 48px;
 }
